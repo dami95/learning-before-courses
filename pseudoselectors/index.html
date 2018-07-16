@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>nth-childs, nth-of-type</title>
+    <!--- image used - downloaded via https://opengameart.org/content/game-characters-flying-birds-attack-sprite-sheets -->
+    <!--- http://bevouliin.com -->
+</head>
+
+<body>
+
+<div>1</div>
+<div>2</div> <!--red, blue-->
+<div>3</div>
+<div>4</div> <!--red, blue-->
+<div>5</div>
+<div>6</div> <!--red, blue-->
+<div>7</div>
+<div>8</div> <!--red, blue-->
+<div>9</div>
+<div>10</div> <!--red, blue-->
+<section>11</section> <!--green-->
+<section>12</section>
+<section>13</section> <!--orange-->
+<div>14</div> <!--red-->
+<div>15</div> <!--blue-->
+<div>16</div> <!--red-->
+<div>17</div> <!--blue-->
+
+<style>
+    div:nth-child(2n) {background: red;}
+    div:nth-of-type(2n) {border: 2px solid blue;}
+    section:nth-of-type(1) {background: green;}
+    section:nth-last-of-type(1) {border: 2px solid orange;}
+
+    body > :nth-child(2n) {color: #eaeaea;}
+</style>
+
+</body>
+</html>
