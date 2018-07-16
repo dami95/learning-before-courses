@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Stop-over animations</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button class="all">Stop birds!</button>
+<button class="first">Stop first bird!</button>
+<button class="second">Stop second bird!</button>
+<button class="third">Stop second bird!</button>
+
+<div class="bird"></div>
+<div class="bird bird2"></div>
+<div class="bird bird3"></div>
+
+<style>
+    @keyframes bird {
+        100% {background-position: 740px 0;}
+    }
+    @keyframes bird2 {
+        0% {background-position: 0 160px;}
+        100% {background-position: 740px 160px;}
+    }
+    @keyframes flying {
+        0% {margin-left: 0;}
+        100% {margin-left: 100%;}
+    }
+
+    /* step: 185px */
+    .bird {
+        width: 180px;
+        height: 160px;
+        background: url('bird.png');
+        animation: flying 10s ease-in-out infinite, bird 0.25s infinite steps(4);
+    }
+    .bird.bird2 {
+        animation-duration: 20s, 0.5s;
+    }
+    .bird.bird3 {
+        background-position: 0 160px;
+        animation: flying 10s ease-in-out infinite, bird2 0.25s infinite steps(4);
+    }
+
+    button.all:active ~ .bird {
+        animation-play-state: paused;
+    }
+    button.first:active ~ .bird:first-of-type {
+        animation-play-state: paused;
+    }
+    button.second:active ~ .bird:nth-of-type(2) {
+        animation-play-state: paused;
+    }
+    button.third:active ~ .bird:nth-last-of-type(1) {
+        animation-play-state: paused;
+    }
+</style>
+
+</body>
+</html>
